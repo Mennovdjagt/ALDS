@@ -7,3 +7,4 @@
 
 2. heap klinkt wel interesant dus die ga ik proberen
     	 
+3. heap heeft een time complexity van O(log n)
