@@ -1,0 +1,9 @@
+1. Je kan gebruik maken van een: 
+	array (O(n long n)),
+	heap (O(log n)),
+	queue.PriorityQueue
+	linked list
+	binary search tree
+
+2. heap klinkt wel interesant dus die ga ik proberen
+    	 
