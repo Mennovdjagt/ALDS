@@ -1,27 +1,47 @@
-class node:
-
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
 class linkedList:
 
-    def __init__(self):
-        self.head = None
-        self.tail
-
+    def __init__(self, value = None):
+        self.value = value
+        self.tail = None
 
     def append(self, value):
-        newNode = node(value)
-        newNode.next = self.head
-        self.head = newNode
-
+        if self.value == None:
+            self.value = value
+            return
+        if self.tail == None:
+            self.tail = linkedList(value)
+            return
+        self.tail.append(value)
 
     def delete(self, value):
-        #do more shit
-
+        if self.tail == None:
+            return
+        if self.value == value:
+            self.value = self.tail.value
+            self.tail = self.tail.tail
+        self.tail.delete(value)
 
     def min(self):
-        #do even more shit
+        if self.tail != None:
+            return self.value
+        tmp = self.tail.min()
+        if tmp < self.value:
+            return tmp
+        return self.value
+
+    def print(self):
+        print(self.value)
+        if self.tail != None:
+            self.tail.print()
 
 
+x = linkedList()
+
+x.append(8)
+x.append(9)
+x.append(10)
+x.print()
+x.delete(8)
+x.append(11)
+print("min: ", x.min())
+x.print()
