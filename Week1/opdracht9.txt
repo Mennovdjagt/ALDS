@@ -1,0 +1,26 @@
+#pseudo code van "def prime1()"
+Output: an array of all prime numbers under 1000
+
+array <- []
+for i in range 0, 1000
+   check <- True
+   for j in range(0, i)
+      for k in range(0, i)
+         if j*k = i then
+            check <- False
+            break
+         end if
+      end for
+      if check = True then
+            array.append(i)
+      end if
+   end for
+end for
+return array
+
+De tijd complexiteit is O(n^3)
+
+Tijd complexiteit van Sieve of Eratosthenes: O(n log log n)
+
+
+

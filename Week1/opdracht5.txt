@@ -1,0 +1,6 @@
+Algorithm 21:	2 + 3n	O(n)
+Algorithm 22:	n^2	O(n^2)
+Algorithm 23:	n^2	O(n^2)
+Algorithm 24:	n^3	O(n^3)
+Algorithm 25:	6 + 1n	O(n^2)
+Algorithm 26:	2n	O(n)

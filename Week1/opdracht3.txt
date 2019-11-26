@@ -1,0 +1,1 @@
+Telt steeds alle getallen uit de array bij elkaar op, tot de waarde van de max. Vervolgens worden de uiterste waarden eraf gehaalt en herhaalt vervolgens.
