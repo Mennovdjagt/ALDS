@@ -1,6 +1,7 @@
 import gomoku
 import random_player
 import time
+import agent
 
 class competition:
     """This class runs the competition between the submitted players.
@@ -85,10 +86,12 @@ class competition:
 game = gomoku.gomoku_game()
 player = random_player.random_dummy_player()
 player2 = random_player.random_dummy_player()
-player3 = random_player.random_dummy_player()
+#player3 = random_player.random_dummy_player()
+player3 = agent.BigOof()
 comp = competition()
 comp.register_player(player)
 comp.register_player(player2)
+#comp.register_player(player3)
 comp.register_player(player3)
 comp.play_competition()
 comp.print_scores()

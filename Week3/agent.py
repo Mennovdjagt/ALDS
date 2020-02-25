@@ -3,6 +3,7 @@ import gomoku
 import time
 import copy
 import math
+import itertools
 
 class Node:
     def __init__(self, board, color, valid_moves, last_move = None, parent = None):
@@ -16,7 +17,7 @@ class Node:
         self.valid_moves = valid_moves  # all the possible moves it can make
 
 
-    def UCT(self, constant = 1/math.sqrt(2)):
+    def UCT(self, constant = 0.7):
         return ((self.Q/self.N) + constant * (math.sqrt(2 * math.log(self.parent.N)) / self.N))
 
 
@@ -85,12 +86,13 @@ class BigOof:
                 else:                                           # if there are still valid moves but we did not win
                     return 0                                    # return 0 if we lose
             return 0
+        return 0
 
 
     def backupValue(self, val, node):
         while node is not None:
             node.N+=1
-            if node:
+            if False:
                 node.Q = node.Q - val
             else:
                 node.Q = node.Q + val
@@ -104,13 +106,12 @@ class BigOof:
         3) the available moves you can play (this is a special service we provide ;-) )
         4) the maximimum time until the agent is required to make a move in milliseconds [diverging from this will lead to disqualification].
         """
-        startTime = time.time_ns()          # the time when this function is started
         tree = Node(board, self.color, valid_moves, last_move)
-        if self.color and self.firstMove:
+        if (self.color and self.firstMove):
             self.firstMove = False              #first move is done, so turn it False to not repeat it again till new game
-            return(9,9)
+            return (9,9)
 
-        while time.time_ns() < (startTime + (max_time_to_move * 1000)):
+        for i in range(0, 100):
             leaf = tree.findSpotToExpand(tree)
             val = self.rollout(leaf)
             self.backupValue(val, leaf)
@@ -120,8 +121,9 @@ class BigOof:
 
         if leaf.last_move is None:
             print(tree.valid_moves)
+            return (10,10)
         else:
-            return(leaf.last_move)
+            return leaf.last_move
 
 
     def id(self):

@@ -4,23 +4,30 @@ import itertools
 class gomoku_game:
     """This class specifies the game dynamics of the gomoku game
     implementing the tournaments rules as on https://www.jijbent.nl/spelregels/go-moku.php"""
-    def __init__(self, bsize_=19, board_=None):
+    def __init__(self, bsize_=19, board_=None, ply_=1, current_empty=None):
         if(board_ is None):
             self.board = []
+            for i in range(bsize_):
+                self.board.append([0] * bsize_)  # Not repeating the list because of the pointers
         else:
             self.board = board_
-        self.ply=1
+        self.ply=ply_
         self.bsize = bsize_
         self.previous_move = None
         rclist = list(range(bsize_))
-        self.empty = list(itertools.product(rclist,rclist))
+        if(current_empty is None):
+            self.empty = list(itertools.product(rclist,rclist))
+        else:
+            self.empty = current_empty
         assert self.bsize%2 == 1
-        for i in range(bsize_):
-            self.board.append([0]*bsize_) #Not repeating the list because of the pointers
 
     def current_board(self):
         """Returns a deep copy of the board, making it harder for agents to state of the board by accident."""
         return copy.deepcopy(self.board)
+
+    def current_board_unsafe(self):
+        """Returns the (reference to the) board, should not be used for the competition."""
+        return self.board
 
     def valid_moves(self):
         """This method returns a list of valid moves, where each move is a tuple with an x and y position on the board."""
