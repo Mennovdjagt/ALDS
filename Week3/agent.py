@@ -7,7 +7,7 @@ import math
 class Node:
     def __init__(self, board, valid_moves, last_move = None, parent = None):
         self.board = board              # the current board state
-        self.finished, self.won
+        #self.finished, self.won
         self.parent = parent            # the parent above
         self.children = []              # all the children
         self.move = last_move           # the last move that was made
@@ -21,17 +21,30 @@ class Node:
 
 
     def findSpotToExpand(self, node):
-        if node.is_terminal():
-            print("the end")
-        if node not in self.children:
-            #create new node to expand
-            #add node to node's children
-            return node.find_random_child()
-        #get node with highest uct value
-        return self.findSpotToExpand(node)
+        # if node is terminal(game finished).
+        if len(node.valid_moves) is 0:
+            return node
+
+        # a node is not fully expanded if there are more valid_moves than children.
+        if len(node.children) < len(node.valid_moves):
+            newBoard = gomoku.gomoku_game(19, node.board)           # create a new board
+            newMove = node.valid_moves[len(node.children)]          # get the next move
+            newNode = Node(newBoard, node.valid_moves, newMove)     # create new node to expand
+            node.children.append(newNode)                           # add node to node's children
+            return newNode
+
+        # if all possible children have been added to a node (all valid moves have been visited),
+        # we need to select one of the children of the node with the highest uct value.
+        if len(node.children) >= len(node.valid_moves):
+            if len(node.children) > 0:                  # makes sure there is atleast 1 child
+                bestChild = node.children[0]            # makes the first child the best child, to be able to compare with other childs
+                for child in node.children:             # loops through all childs to find the one with the highest uct
+                    if child.UCT() > bestChild.UCT():   # checks if the old child has a worse utc than the next child
+                        bestChild = child               # if the next child is better make it the best child
+            return self.findSpotToExpand(bestChild)     # the best node
 
 
-class random_dummy_player:
+class BigOof:
     """This class specifies a player that just does random moves.
     The use of this class is two-fold: 1) You can use it as a base random roll-out policy.
     2) it specifies the required methods that will be used by the competition to run
@@ -59,4 +72,4 @@ class random_dummy_player:
 
     def id(self):
         """Please return a string here that uniquely identifies your submission e.g., "name (student_id)" """
-        return "random_player"
+        return "Menno (1745500)"
