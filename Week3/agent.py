@@ -23,7 +23,7 @@ class Node:
 
     def findSpotToExpand(self, node):
         # if node is terminal(game finished).
-        if len(node.valid_moves) is 0:
+        if len(node.valid_moves) == 0:
             return node
 
         # a node is not fully expanded if there are more valid_moves than children.
@@ -31,6 +31,7 @@ class Node:
             newBoard = gomoku.gomoku_game(19, node.board)           # create a new board
             newMove = node.valid_moves[len(node.children)]          # get the next move
             newNode = Node(newBoard, node.valid_moves, newMove)     # create new node to expand
+            newNode.parent = node
             node.children.append(newNode)                           # add node to node's children
             return newNode
 
@@ -77,16 +78,18 @@ class BigOof:
             game = gomoku.gomoku_game(19, node.board)           # create a game with the nodes board
             while node.valid_moves:                             # loop as long as there are still valid moves
                 randomMove = random.choice(node.valid_moves)    # get a random move out of the possible valid moves
+                print(node.valid_moves)
                 game.move(randomMove)                           # do the random move
                 node.valid_moves.remove(randomMove)             # remove the random move we just did
                 if game.check_win(randomMove):                  # check if we have won with the random move
-                    return 1                                    # return 1 if we win
+                    return 1.0                                  # return 1 if we win
                 if len(game.valid_moves()) == 0:                # check if there are still valid moves
                     return 0.5                                  # nobody wins it is a draw
                 else:                                           # if there are still valid moves but we did not win
                     return 0                                    # return 0 if we lose
             return 0
-        return 0
+        else:
+            print("------fault")
 
 
     def backupValue(self, val, node):
@@ -120,10 +123,9 @@ class BigOof:
             return()
 
         if leaf.last_move is None:
-            print(tree.valid_moves)
             return (10,10)
         else:
-            return leaf.last_move
+            return (leaf.last_move)
 
 
     def id(self):

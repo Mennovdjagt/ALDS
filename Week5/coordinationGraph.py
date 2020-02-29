@@ -1,5 +1,6 @@
 import random
 import copy
+import queue
 
 class edge:
 
@@ -90,18 +91,36 @@ class coordinationGraph:
         :param newValue: the new value for the decision variable
         :return: The difference in reward between the old solution and the new solution (with solution[variableIndex] set to newValue)
         """
-        delta = 0
-        #TODO
+
+        oldReward = self.evaluateSolution(oldSolution)      # get the reward of the old solution
+        oldSolution[variableIndex] = newValue               # set the oldsolution[variableIndex] to newValue
+        newReward = self.evaluateSolution(oldSolution)      # get a new reward with the changed oldSolution (using newValue at variableindex)
+
+        delta = newReward - oldReward                       # calculate the difference in reward between the old solution and the new solution
+
         return delta
 
 def localSearch4CoG(coordinationGraph, initialSolution):
     """
-    TODO: Implement local search
     :param coordinationGraph: the coordination graph to optimise for
     :param initialSolution: an initial solution for the coordination graph
     :return: a new solution (a local optimum)
     """
+
     solution = copy.copy(initialSolution)
+
+    vars = list(coordinationGraph.nodesAndConnections.keys())
+    random.shuffle(vars)
+
+    while vars:
+        i = vars.pop(0)
+        for decision in range(3):
+            delta = coordinationGraph.evaluateChange(solution, i, decision)
+            if delta > 0:
+                solution[i] = decision
+                random.shuffle(vars)
+                break
+
     return solution
 
 def multiStartLocalSearch4CoG(coordinationGraph, noIterations):
@@ -131,11 +150,10 @@ def iteratedLocalSearch4CoG(coordinationGraph, pChange, noIterations):
     reward = 0
     return solution, reward
 
-###TODO OPTIONAL: implement genetic local search.
 
 nVars = 50
 nActs = 3
 cog = coordinationGraph(nVars,1.5/nVars,nActs)
 print(cog.nodesAndConnections)
 print(cog.edges)
-print(cog.evaluateSolution([2]*nVars))
+print(cog.evaluateSolution(localSearch4CoG(cog, [2]*nVars)))
