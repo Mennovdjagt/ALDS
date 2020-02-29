@@ -84,8 +84,6 @@ class coordinationGraph:
 
     def evaluateChange(self, oldSolution, variableIndex, newValue):
         """
-        TODO: a function that evaluates a local change. Specifically
-
         :param oldSolution: The original solution
         :param variableIndex: the index of the decision variable that is changing
         :param newValue: the new value for the decision variable
@@ -108,17 +106,17 @@ def localSearch4CoG(coordinationGraph, initialSolution):
     """
 
     solution = copy.copy(initialSolution)
+    stop = False
+    vars = list(coordinationGraph.nodesAndConnections.keys())                   # a list of the decisions
+    random.shuffle(vars)                                                        # randomize the list
 
-    vars = list(coordinationGraph.nodesAndConnections.keys())
-    random.shuffle(vars)
-
-    while vars:
-        i = vars.pop(0)
+    while vars:                                                                 # loop through all var objects
+        i = vars.pop(0)                                                         # put var in i and remove it out of vars
         for decision in range(3):
-            delta = coordinationGraph.evaluateChange(solution, i, decision)
+            delta = coordinationGraph.evaluateChange(solution, i, decision)     # get the difference in reward
             if delta > 0:
-                solution[i] = decision
-                random.shuffle(vars)
+                solution[i] = decision                                          # the new solution if the value is positive
+                random.shuffle(vars)                                            # rerandomize the list
                 break
 
     return solution
