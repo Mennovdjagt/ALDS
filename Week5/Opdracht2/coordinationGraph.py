@@ -1,6 +1,9 @@
+import timeit
+mycode = '''
 import random
 import copy
-import queue
+import matplotlib.pyplot as plt
+
 
 class edge:
 
@@ -152,6 +155,15 @@ def iteratedLocalSearch4CoG(coordinationGraph, pChange, noIterations):
 nVars = 50
 nActs = 3
 cog = coordinationGraph(nVars,1.5/nVars,nActs)
-print(cog.nodesAndConnections)
-print(cog.edges)
-print(cog.evaluateSolution(localSearch4CoG(cog, [2]*nVars)))
+rewards = []
+
+for i in range(100):
+    rewards.append(cog.evaluateSolution(localSearch4CoG(cog, [2]*nVars)))
+
+n, bins, patches = plt.hist(rewards, 10, facecolor='g', alpha=0.75)
+plt.xlabel("Reward")
+plt.ylabel('Number')
+plt.show()
+'''
+
+print(str(timeit.timeit(stmt = mycode, number = 1) / 100) + " seconds")
