@@ -149,9 +149,24 @@ def iteratedLocalSearch4CoG(coordinationGraph, pChange, noIterations):
     :param noIterations:  the number of iterations
     :return: the best local optimum found and its reward
     """
-    solution = None
-    reward = 0
-    return solution, reward
+    solution = None                 # the approximate solution (a local optimum)
+    val = None                      # the reward (negative infinity)
+
+    for i in range(0, noIterations-1):                          # loop through all noIterations
+        a = solution                                            # create a new variable called a to store the solution
+        for j in coordinationGraph.nodesAndConnections.keys():  # loop through all nodes
+            r = random.uniform(0, 1)                            # get a random number between 0 and 1
+            if r < pChange:                                     # check if the random(0, 1) is smaller than the number of trails
+                a[j] = random.randrange(3)                      # change a by changing the value of variable j to a random value
+
+        a = localSearch4CoG(coordinationGraph, a)               # check the value of the new solution
+        newVal = coordinationGraph.evaluateSolution(a)          # get the new reward
+
+        if newVal > val:        # check if the new reward is better than the old reward
+            solution = a        # change the solution to the new solution
+            val = newVal        # set the old reward to the new reward
+
+    return solution, val        # return the solution and the reward
 
 
 nVars = 50
