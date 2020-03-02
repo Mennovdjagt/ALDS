@@ -1,5 +1,6 @@
 import random
 import copy
+import math
 
 class edge:
 
@@ -77,7 +78,7 @@ class coordinationGraph:
         for i in range(len(solution)):
             for j in self.nodesAndConnections[i]:
                 if(j>i):
-                    print( "("+str(i)+","+str(j)+") -> "+str(self.edges[(i,j)].localReward(solution[i], solution[j])))
+                    #print( "("+str(i)+","+str(j)+") -> "+str(self.edges[(i,j)].localReward(solution[i], solution[j])))
                     result += self.edges[(i,j)].localReward(solution[i], solution[j])
         return result
 
@@ -127,7 +128,7 @@ def multiStartLocalSearch4CoG(coordinationGraph, noIterations):
     :return: the best local optimum found and its reward
     """
     solution = None     # the approximate solution (the local optimum)
-    val = None          # not sure yet what negative infinity means (could be something like this: -math.inf)
+    val = -math.inf     # not sure yet what negative infinity means (could be something like this: -math.inf)
 
     for i in range(0, noIterations-1):
         a = [random.randrange(3)] * len(coordinationGraph.nodesAndConnections.keys())   # a random value for each decision variable (a random state * the amount of nodes)
@@ -149,8 +150,8 @@ def iteratedLocalSearch4CoG(coordinationGraph, pChange, noIterations):
     :param noIterations:  the number of iterations
     :return: the best local optimum found and its reward
     """
-    solution = None                 # the approximate solution (a local optimum)
-    val = None                      # the reward (negative infinity)
+    solution = [-1]*len(coordinationGraph.nodesAndConnections.keys())   # the approximate solution (a local optimum)
+    val = -math.inf                                                     # the reward (negative infinity)
 
     for i in range(0, noIterations-1):                          # loop through all noIterations
         a = solution                                            # create a new variable called a to store the solution
@@ -172,6 +173,8 @@ def iteratedLocalSearch4CoG(coordinationGraph, pChange, noIterations):
 nVars = 50
 nActs = 3
 cog = coordinationGraph(nVars,1.5/nVars,nActs)
-print(cog.nodesAndConnections)
-print(cog.edges)
-print(cog.evaluateSolution(localSearch4CoG(cog, [2]*nVars)))
+#print(cog.nodesAndConnections)
+#print(cog.edges)
+print("Local search: " + str(cog.evaluateSolution(localSearch4CoG(cog, [2]*nVars))))
+print("Multi-start local search: " + str(multiStartLocalSearch4CoG(cog, 10)[1]))
+print("Iterated local search: " + str(iteratedLocalSearch4CoG(cog, 0.0, 10)[1]))
