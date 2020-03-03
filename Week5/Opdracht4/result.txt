@@ -1,0 +1,5 @@
+Best value: 53.14447359000369
+Best pChange value: 0.716
+
+I looped 1000 times through a loop and everytime increasing the pChange value with 0.001.
+It took less than 2 minuts to get the result which is 0.716 with a result of 53.14447359000369

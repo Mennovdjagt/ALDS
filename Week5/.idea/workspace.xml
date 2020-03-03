@@ -9,41 +9,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Week5$coordinationGraph__3_.coverage" NAME="coordinationGraph (3) Coverage Results" MODIFIED="1583139698016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Opdracht3" />
+    <SUITE FILE_PATH="coverage/Week5$coordinationGraph__3_.coverage" NAME="coordinationGraph (3) Coverage Results" MODIFIED="1583231238894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Opdracht3" />
     <SUITE FILE_PATH="coverage/Week5$coordinationGraph.coverage" NAME="coordinationGraph Coverage Results" MODIFIED="1582988199767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Week5$coordinationGraph__2_.coverage" NAME="coordinationGraph (2) Coverage Results" MODIFIED="1582991654094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Opdracht2" />
     <SUITE FILE_PATH="coverage/Week5$coordinationGraph__1_.coverage" NAME="coordinationGraph (1) Coverage Results" MODIFIED="1582988826415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Opdracht1" />
+    <SUITE FILE_PATH="coverage/Week5$coordinationGraph__4_.coverage" NAME="coordinationGraph (4) Coverage Results" MODIFIED="1583231558260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Opdracht4" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1353335796">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="32" />
-          <entry key="py" value="3123" />
+          <entry key="py" value="3461" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3155" />
+          <entry key="Python" value="3493" />
         </counts>
       </usages-collector>
     </session>
@@ -51,10 +52,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Opdracht3/coordinationGraph.py">
+        <entry file="file://$PROJECT_DIR$/Opdracht4/coordinationGraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="177" column="21" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="21" />
+            <state relative-caret-position="613">
+              <caret line="193" column="27" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="27" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -81,6 +82,7 @@
         <option value="$PROJECT_DIR$/Opdracht1/coordinationGraph.py" />
         <option value="$PROJECT_DIR$/Opdracht2/coordinationGraph.py" />
         <option value="$PROJECT_DIR$/Opdracht3/coordinationGraph.py" />
+        <option value="$PROJECT_DIR$/Opdracht4/coordinationGraph.py" />
       </list>
     </option>
   </component>
@@ -90,10 +92,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1272" />
-    <option name="width" value="1297" />
-    <option name="height" value="1398" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="1271" />
+    <option name="y" value="-9" />
+    <option name="width" value="1298" />
+    <option name="height" value="1408" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -124,6 +127,11 @@
               <item name="Week5" type="462c0819:PsiDirectoryNode" />
               <item name="Opdracht3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Week5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Week5" type="462c0819:PsiDirectoryNode" />
+              <item name="Opdracht4" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -139,6 +147,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Documents\GitHub\ALDS\Week5\Opdracht4" />
       <recent name="E:\Documents\GitHub\ALDS\Week5\Opdracht3" />
     </key>
   </component>
@@ -154,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.coordinationGraph (3)">
+  <component name="RunManager" selected="Python.coordinationGraph (4)">
     <configuration name="coordinationGraph (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,6 +230,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="coordinationGraph (4)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Week5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Opdracht4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Opdracht4/coordinationGraph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="coordinationGraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Week5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,9 +279,11 @@
       <item itemvalue="Python.coordinationGraph (1)" />
       <item itemvalue="Python.coordinationGraph (2)" />
       <item itemvalue="Python.coordinationGraph (3)" />
+      <item itemvalue="Python.coordinationGraph (4)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.coordinationGraph (4)" />
         <item itemvalue="Python.coordinationGraph (3)" />
         <item itemvalue="Python.coordinationGraph (2)" />
         <item itemvalue="Python.coordinationGraph (1)" />
@@ -272,15 +305,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
+    <frame x="1017" y="-7" width="1038" height="1126" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0989011" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.43251532" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32696176" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23239437" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -310,9 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -325,8 +354,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Opdracht3/coordinationGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="177" column="21" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="21" />
+        <state relative-caret-position="1643">
+          <caret line="179" column="80" selection-start-line="179" selection-start-column="80" selection-end-line="179" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Opdracht4/coordinationGraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="193" column="27" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="27" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
